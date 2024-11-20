@@ -1,67 +1,131 @@
 *{
    box-sizing: border-box;
+   padding: 0;
+   margin: 0;
 }
 
 html, body{
    margin: 0px;
    padding: 0px;
-   overflow: hidden;
-   width: 100%;
-   height: 100%;
+   width: 100vw;
+   height: 100vh;
+   background-color: white;
 }
 
 
 header{
     background-color: #0390fc;
-    padding: 30px;
     text-align: center;
     font-size: 25px;
     font-family: 'Poppins';
     color: white;
-
+    height: 10vh;
+    box-shadow:lightgrey 0px 5px 0px 0px;
 }
 
-h2.stretch{
-    display:inline-block;
-    -webkit-transform:scale(2,1.3); /* Safari and Chrome */
-    -moz-transform:scale(2,1.3); /* Firefox */
-    -ms-transform:scale(2,1.3); /* IE 9 */
-    -o-transform:scale(2,1.3); /* Opera */
-    transform:scale(2,1.3); /* W3C */
+header a{
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Poppins';
+    color: white;
 }
 
-.content{
+nav {
+    width:80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+nav ul{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+nav li{
+    height: 7vh;
+    background-color: #0390fc;
+    width:100%;
+    border: 1px solid whitesmoke;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:lightgray 0px 5px 0px 0px;
+    /*box-shadow:rgba(9, 20, 66, 0.25) 0px 20px 32px -8px;*/
+}
+
+nav li:hover {
+    transform: scale(1.05);
+}
+
+nav li a{
+   color: whitesmoke;
+   font-size:18pt;
+   text-decoration: none;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   width:100%;
+   height:100%;
+}
+
+#left {
+    border-radius: 0px 0px 0px 25px;
+    box-shadow:lightgrey 0px 5px 0px 0px;
+}
+
+#right {
+    border-radius: 0px 0px 25px 0px;
+    box-shadow:lightgrey 0px 5px 0px 0px;
+}
+
+#gallery {
+    height: 100%;
+    width: 100%;
+}
+
+
+#content{
     display: flex;
     flex-direction: row;
     font-family: 'Rubik';
     padding: 0px;
     margin: 0px;
-    height:62.3%;
+    height: auto;
+    background-color: black;
 }
 
-nav{
-    padding: 20px;
-}
 
 article{
-    padding: 10px;
-    overflow-x: hidden;
+    padding: 0px;
     width: 100%;
+    height: 80vh;
 }
 
-#gallery{
-    
-    
-}
 
 footer{
-    background-color: #0480de;
+    background-color: #0390fc;
     text-align: center;
     padding: 10px;
     color: white;
     font-family: 'Poppins';
     position:fixed;
     bottom:0px;
-    width:100%;
-    height:auto;
+    width:100vw;
+    height:10vh;
+    
 }
+
+#central-box {
+    height: 30vh;
+    width: 20vw;
+    box-shadow: lightgray 0px 0px 5px 0px;
+}
+
+.in-middle{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  

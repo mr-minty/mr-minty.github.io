@@ -7,11 +7,12 @@
 	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
 
-	
-	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon.io">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-	<link rel="manifest" href="site.webmanifest">
+	<!--Scripts
+	<script src="scroll.js" defer></script>
+-->
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon\apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon\favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon\favicon-16x16.png">
 	
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,20 +25,20 @@
 
 	<body>
         <header>
-			<img src="cloud.png" alt="cloud" width="100px" height="80">
-			<h2 class="stretch">BuzzyCloud</h2>
+			<h2><a href=index.html>BuzzyCloud</a></h2>
 		</header>
 
-		<div class="content">
-			
-			<nav>
-				<ul>
-					<li>Adbra</li>
-					<li>Bubble</li>
-					<li>Couliflower</li>
-					<li>Devious</li>
-				</ul>
-			</nav>
+		<nav>
+			<ul>
+				<li id="left"><a href="index.html">Home</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="about.html">About</a></li>
+				<li id="right"><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+
+		<div id="content">
+
 			<article>
 				<img id="gallery" src="rj45.jpeg">
 			</article>
@@ -47,6 +48,8 @@
 		<footer>
 			<p>Footer</p>
 		</footer>
+
+		
 	</body>
 
 </html>
