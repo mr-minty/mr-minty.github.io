@@ -7,15 +7,24 @@
 html, body{
    margin: 0px;
    padding: 0px;
-   width: 100vw;
-   height: 100vh;
+   width: 100%;
+   height: 100%;
    background-color: white;
+   display: flex;
+   flex-direction: column;
 }
 
+#page-container{
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+}
 
 header{
     background-color: #0390fc;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 25px;
     font-family: 'Poppins';
     color: white;
@@ -28,6 +37,13 @@ header a{
     font-size: 25px;
     font-family: 'Poppins';
     color: white;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
 }
 
 nav {
@@ -80,11 +96,47 @@ nav li a{
     box-shadow:lightgrey 0px 5px 0px 0px;
 }
 
-#gallery {
-    height: 100%;
-    width: 100%;
+#slideshow-container {
+    position: relative;
+    width: 80%;
+    height: 70vh; /* Adjust the height as needed */
+    margin: auto;
+    outline: 1px solid #0390fc;
+    box-shadow: black 0px 0px 5px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
+#gallery {
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container {
+    width: 100%; /* Make videos fill the gallery's width */
+    height: auto;
+    position: relative;
+    overflow: hidden; /* Ensure no video spills outside */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container video {
+    width: 100%; /* Scale video to fit container width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the video covers the container without distortion */
+    border: none;
+}
 
 #content{
     display: flex;
@@ -93,34 +145,65 @@ nav li a{
     padding: 0px;
     margin: 0px;
     height: auto;
-    background-color: black;
+    background-color: white;
+   
 }
 
 
 article{
     padding: 0px;
     width: 100%;
-    height: 80vh;
 }
 
-
+/*
 footer{
     background-color: #0390fc;
-    text-align: center;
-    padding: 10px;
-    color: white;
-    font-family: 'Poppins';
+    box-shadow: lightgray 0px -5px 0px 0px;
+    padding: 0px;
     position:fixed;
     bottom:0px;
     width:100vw;
     height:10vh;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+footer {
+    background-color: #0390fc;
+    color: white;
+    height: 10vh;
+    box-shadow: lightgray 0px -5px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Default relative positioning */
+    z-index: 10; /* Ensure footer is on top */
+    width: 100%; /* Ensure it spans the full page width */
+}
+
+footer p {
+    color: white;
+    font-family: 'Poppins';
+}
+
+.body-container-about{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height:80vh;
 }
 
 #central-box {
-    height: 30vh;
-    width: 20vw;
-    box-shadow: lightgray 0px 0px 5px 0px;
+    height: 50vh;
+    width: 30vw;
+    box-shadow: black 0px 0px 5px 0px;
+    margin: auto;
+    outline: 1px solid #0390fc;
+    text-align: center;
+    font-size: 20pt;
+    font-family: Arial, sans-serif;
+    color: #777777;
 }
 
 .in-middle{
@@ -129,3 +212,145 @@ footer{
     transform: translateY(-50%);
   }
   
+#fade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    pointer-events: none; /* Ensure it doesn't block interactions */
+    transition: opacity 2s ease-in-out; /* Smooth fade effect */
+    z-index: 2; /* Ensure it sits above the videos */
+}
+
+#fade-overlay.fade-in {
+    opacity: 1; /* Fully black during the fade */
+}
+
+.video-container {
+    position: relative; /* To ensure the overlay covers the videos */
+}
+
+.video-element {
+    position: relative;
+    z-index: 1; /* Ensure videos are beneath the overlay */
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+}
+
+/*STYLES FOR CONTACT.HTML */
+.body-container-contact{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height: 80vh;
+}
+.form-container{
+    height: 60vh;
+    width: 80vh;
+    box-shadow: black 0px 0px 5px 0px;
+    margin: auto;
+    outline: 1px solid #0390fc;
+    background-color: #0390fc;
+}
+
+#contact-form{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#contact-form input[type="text"]{
+    width: 50%;
+    padding: 6px 10px;
+    margin: 0px;
+    box-sizing: border-box;
+    border-radius: 3%;
+    border: 1px solid #0390fc;
+}
+
+#contact-form input[type="submit"]{
+    background-color: white;
+    margin: 5px;
+    width: 10%;
+    height: 5%;
+    border-radius: 3%;
+    border: 1px solid #0390fc;
+    cursor:pointer;
+}
+
+#contact-form input[type="submit"]:hover{
+    transform: scale(1.2);
+
+}
+
+#contact-form label{
+    color: white;
+    font-family: 'Poppins';
+    font-size: 1em;
+}
+
+#contact-form textarea{
+    resize: none;
+    width:50%;
+    border-radius: 2%;
+    border: 1px solid #0390fc;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    width: 50%; /* Center the input fields relative to the form container */
+}
+
+.form-group label {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    margin-bottom: 4px; /* Add spacing between label and input */
+    text-align: left; /* Ensure labels are left-aligned */
+}
+
+#success {
+    background-color: white;
+    width: 20%;
+    height: 10%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    font-size: 25px;
+    font-family: 'Poppins';
+    color: #0390fc;
+    border: 2px solid #0390fc;
+    border-radius: 4%;
+}
+
+/*GALLERY STYLES*/
+
+.body-container-gallery{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    height:80vh;
+}
+
+.gallery-box {
+    height: 200px; /* Set desired height */
+    width: 300px; /* Set desired width */
+    display: flex;
+    overflow: hidden; /* Ensures no overflow outside the box */
+}
+
+.gallery-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the video fits within the box while maintaining its aspect ratio */
+}
